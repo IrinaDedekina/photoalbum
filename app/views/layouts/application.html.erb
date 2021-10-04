@@ -9,10 +9,13 @@
   </head>
 
   <body>
+    <div class="container-fluid container-background">
+      <div class="container">
+        <%= link_to "Главная", root_path, class: "navigation" %>
+        <%= link_to "О проекте", pages_about_path, class: "navigation" %>
 
-    <%= link_to "Главная", root_path %>
-    <%= link_to "О нас", pages_about_path %>
-
-    <%= yield %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
