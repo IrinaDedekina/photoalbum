@@ -9,13 +9,11 @@
   </head>
 
   <body>
-    <div class="container-fluid container-background">
-      <div class="container">
-        <%= link_to "Главная", root_path, class: "navigation" %>
-        <%= link_to "О проекте", pages_about_path, class: "navigation" %>
-        <% if user_signed_in? %>
-          <%= link_to "Выйти", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        <% end %>
+    <div class="container-fluid bg-grey container-background">
+      <%= render "layouts/navigation" %>
+
+      <div class="container-login">
+
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
 

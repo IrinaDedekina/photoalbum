@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
 
 .container-background {
   width: 100%;
@@ -7,6 +8,33 @@
   background-image: url(image_path("background.jpg"));
 }
 
-.navigation {
-  text-decoration: none;
+.btn {
+  background-color: #bdc3c7;
+  --bs-bg-opacity: 0.5;
+}
+
+.nav-link {
+  color: #2e3131;
+  text-decoration:none;
+}
+
+.landing-logo {
+  font-size: 2rem;
+  font-family: 'Gluten', cursive;
+}
+
+.devise-form {
+  width: 50%;
+}
+
+.photo-form {
+  width: 50%;
+}
+
+.bg-grey {
+  background-color: rgba(236, 240, 241, 1);
+}
+
+.bg-light {
+  --bs-bg-opacity: 0.5;
 }
