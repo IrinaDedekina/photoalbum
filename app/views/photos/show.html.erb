@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="container bg-success bg-light p-2 text-dark bg-opacity-10">
+  <div class="card-body">
+    <p>
+      <strong>Description:</strong>
+      <%= @photo.description %>
+      <br>
+      <strong>User email:</strong>
+    </p>
+    <%= link_to 'Edit', edit_photo_path(@photo) %> |
+    <%= link_to 'Back', photos_path %>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @photo.description %>
-</p>
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
