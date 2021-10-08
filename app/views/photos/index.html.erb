@@ -13,11 +13,14 @@
       <% @photos.each do |photo| %>
         <tr>
           <td><%= photo.description %></td>
+          <td><%= photo.user.email if photo.user %></td>
           <td><%= link_to 'Show', photo %></td>
+          <% if photo.user == current_user %>
           <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
           <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
         </tr>
+      <% end %>
     </tbody>
   </table>
 
