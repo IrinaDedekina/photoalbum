@@ -9,15 +9,21 @@
   </head>
 
   <body>
-    <div class="container-fluid bg-grey container-background">
+    <% if user_signed_in? %>
+      <div class="color-background-container">
+    <% else %>
+      <div class="container-background">
+    <% end %>
       <%= render "layouts/navigation" %>
 
       <div class="container-login">
+        <div class="container bg-success bg-light p-2 text-dark bg-opacity-10">
 
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
 
-        <%= yield %>
+          <%= yield %>
+        </div>
       </div>
     </div>
   </body>
