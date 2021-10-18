@@ -1,0 +1,26 @@
+<%= @user.email %>
+  <% unless current_user.id == @user.id %>
+    <% if current_user.subscriptions.exists?(friend_id: @user.id) %>
+      <%= link_to "Отписаться", unsubscribe_profile_path(@user) %>
+    <% else %>
+      <%= link_to "Подписаться", subscribe_profile_path(@user) %><br>
+    <% end %>
+  <% end %>
+<br>
+
+<div class="card-group">
+  <div class="row" style="display: flex;">
+    <% @user.photos.each do |photo| %>
+      <div class="col-6 col-md-4 text-center" style="margin: auto">
+          <%= image_tag photo.image.url(:medium) %><br>
+          <%= photo.description %><br>
+          <%= link_to 'Show', photo %>
+          <% if photo.user == current_user %>
+          | <%= link_to 'Edit', edit_photo_path(photo) %> |
+          <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
