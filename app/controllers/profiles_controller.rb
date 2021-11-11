@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: %i[ show subscribe unsubscribe ]
+
   def show
   end
 
@@ -34,6 +35,18 @@ class ProfilesController < ApplicationController
         redirect_to profile_path(@user), notice: "Вы не были подписаны на данного пользователя"
       end
     end
+  end
+
+  def my_photos
+    @photos = current_user.photos.order("created_at DESC")
+  end
+
+  def subscribes_list
+    @friends = User.where(id: current_user.subscriptions.pluck(:friend_id))
+  end
+
+  def friends_photos
+    @photos = Photo.where(user_id: current_user.subscriptions.pluck(:friend_id)).order("created_at DESC")
   end
 
   private

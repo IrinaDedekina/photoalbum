@@ -9,6 +9,9 @@
           </li>
           <% if user_signed_in? %>
             <%= link_to "Фотографии", photos_path, class: "nav-link" %>
+            <%= link_to "Мои фото", profiles_my_photos_path, class: "nav-link" %>
+            <%= link_to "Мои подписки", profiles_subscribes_list_path, class: "nav-link" %>
+            <%= link_to "Фото друзей", profiles_friends_photos_path, class: "nav-link" %>
             <%= link_to current_user.email, edit_user_registration_path, class: "nav-link" %>
             <%= link_to "Выйти", destroy_user_session_path, method: :delete, class: "nav-link" %>
           <% else %>

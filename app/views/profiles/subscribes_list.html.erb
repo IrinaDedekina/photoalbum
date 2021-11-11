@@ -1,0 +1,6 @@
+<% @friends.each do |friend| %>
+  <div class="col-6 col-md-4 text-center" style="margin: auto">
+      <%= link_to friend.email, profile_path(friend.id) %> |
+      <%= link_to "Отписаться", unsubscribe_profile_path(friend.id) %>
+  </div><br>
+<% end %>
