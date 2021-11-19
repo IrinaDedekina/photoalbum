@@ -17,6 +17,7 @@ public/system/photos/images/
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/config/secrets.yml
 
 # Ignore Byebug command history file.
 .byebug_history
