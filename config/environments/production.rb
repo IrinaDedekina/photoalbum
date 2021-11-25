@@ -77,15 +77,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'photoalbum21.herokuapp.com', port: 3000 }
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'photoalbum21.herokuapp.com',
-    user_name:            ENV.fetch('MAIL_ACCOUNT_NAME'),
-    password:             ENV.fetch('MAIL_PASSWORD'),
-    authentication:       'plain',
-    enable_starttls_auto: true }
+  config.action_mailer.delivery_method = :mailjet
 
   config.paperclip_defaults = {
     storage: :s3,

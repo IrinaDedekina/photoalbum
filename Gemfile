@@ -36,6 +36,7 @@ gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk', '~> 3.1'
 gem 'will_paginate', '~> 3.3'
 gem 'will_paginate-bootstrap'
+gem 'mailjet'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
