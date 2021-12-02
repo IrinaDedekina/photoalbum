@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
     @photo = current_user.photos.build(photo_params)
 
     if @photo.save
-      redirect_to @photo, notice: "Photo was successfully created."
+      redirect_to @photo, notice: t("controllers.photos.created")
     else
       render :new
     end
@@ -29,7 +29,7 @@ class PhotosController < ApplicationController
 
   def update
     if @photo.update(photo_params)
-      redirect_to @photo, notice: "Photo was successfully updated."
+      redirect_to @photo, notice: t("controllers.photos.updated")
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class PhotosController < ApplicationController
   def destroy
     @photo.destroy
 
-    redirect_to photos_url
+    redirect_to photos_url, notice: t("controllers.photos.destroy")
   end
 
   private
@@ -46,7 +46,7 @@ class PhotosController < ApplicationController
   def owner
     @photo = current_user.photos.find_by(id: params[:id])
 
-    redirect_to photos_path, notice: "У вас нет разрешения на изменение этой фотографии" if @photo.nil?
+    redirect_to photos_path, notice: t("controllers.photos.update_error") if @photo.nil?
   end
 
   def set_photo

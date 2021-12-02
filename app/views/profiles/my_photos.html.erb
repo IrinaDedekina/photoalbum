@@ -10,11 +10,14 @@
           <br>
           <%= photo.description %><br>
           <% if photo.user == current_user %>
-          <%= link_to 'Edit', edit_photo_path(photo) %> |
-          <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Редактировать', edit_photo_path(photo) %> |
+          <%= link_to 'Удалить', photo, method: :delete, data: { confirm: t('photos.destroy_confirm') } %>
           <% end %>
         </div>
 
     <% end %>
   </div>
 </div>
+    <div class="d-grid gap-2 col-2 mx-auto">
+    <%= link_to 'Создать фото', new_photo_path(@photo), class: 'btn btn-primary text-center' %>
+  </div>

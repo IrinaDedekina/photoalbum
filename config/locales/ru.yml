@@ -1,0 +1,88 @@
+ru:
+  header: "Делитесь своими эмоциями"
+  activerecord:
+    # Перевод названия моделей
+    models:
+      user: 'Пользователь'
+      photo: 'Фотография'
+      subscription: 'Подписка'
+
+    # Перевод названий аттрибутов моделей
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              use_of_registered_email: "Этот email зарегистрирован. Для подписки зайдите в Ваш профиль."
+
+
+
+  # Перевод сообщений, которые отправляет контроллер
+  controllers:
+    profiles:
+      subscribe_to_your_profile: "Вы не можете подписаться на свой профиль"
+      already_a_subscription: "Вы уже подписаны на данный профиль"
+      successfully_subscribed: "Вы подписаны на данного пользователя"
+      successfully_unsubscribe: "Вы больше не подписаны на данного пользователя"
+      unsubscribe_error: "Вы не были подписаны на данного пользователя"
+    photos:
+      created: "Фото было успешно добавлено"
+      updated: "Фото было успешно обновлено"
+      destroy: "Фото было успешно удалено"
+      update_error: "У вас нет разрешения на изменение этой фотографии"
+
+
+  # Перевод названия приложения и компании-разработчика
+  app:
+    name: 'Photoalbum'
+
+  errors:
+    messages:
+      not_saved:
+        one: '%{count} ошибка'
+        few: '%{count} ошибки'
+        many: '%{count} ошибок'
+
+  photos:
+    destroy_confirm: 'Вы уверены, что хотите удалить эту фотографию?'
+
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      decline_subscription: 'Вы не можете подписаться на свое событие'
+
+  pundit:
+    not_authorized: 'Вам сюда нельзя!'
+
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Дата'
+      owner: 'Организатор'
+      subject: 'Новый комментарий @ %{event}'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Дата'
+      owner: 'Организатор'
+      subject: 'Новая подписка на %{event}'
+    photo:
+      title: 'Новое фото'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Дата'
+      owner: 'Организатор'
+      subject: 'Новая фотография @ %{event}'

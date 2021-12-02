@@ -12,5 +12,8 @@ module Photoalbum
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.action_mailer.delivery_method = :mailjet
+
+    config.i18n.default_locale = :ru
+    config.i18n.locale = :ru
   end
 end
